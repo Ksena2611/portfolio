@@ -1,0 +1,246 @@
+/* =============================================
+   CONTACT.CSS - REFAKTOROVANÉ A VYLEPŠENÉ STYLY
+   ============================================= */
+
+/* Základní nastavení pro stránku kontaktů */
+.contact-body {
+    background-color: #111827;
+    color: #ffffff;
+}
+
+/* --- KONTAKTNÍ SEKCE --- */
+.contact-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 6rem;
+    background: linear-gradient(135deg, #111827, #1f2937);
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    text-align: center;
+}
+
+.contact-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    color: #d1d5db;
+}
+
+/* --- VYLEPŠENÝ STYL HLAVNÍCH TLAČÍTEK --- */
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Společný základ pro hlavní akční tlačítka */
+.contact-buttons .btn-primary,
+.contact-buttons .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    max-width: 280px;
+    padding: 1.1rem 2.2rem;
+    border-radius: 9999px; /* Plně zaoblené hi-tech knoflíky */
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+}
+
+/* Tlačítko: Napsat email */
+.contact-buttons .btn-primary {
+    background-color: #ffffff;
+    color: #111827;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+.contact-buttons .btn-primary:hover {
+    background-color: #e5e7eb;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.15);
+}
+
+/* Tlačítko: LinkedIn */
+.contact-buttons .btn-secondary {
+    background-color: #1f2937;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.contact-buttons .btn-secondary:hover {
+    background-color: #374151;
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Velikost ikon uvnitř tlačítek */
+.contact-buttons .btn-primary i {
+    font-size: 1.25rem;
+}
+.contact-buttons .btn-secondary i {
+    font-size: 1.35rem;
+    color: #0a66c2; /* Originální LinkedIn barva pro akcent */
+}
+
+
+/* --- MODÁLNÍ OKNO (FORMULÁŘ) --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px); /* Moderní efekt rozmazání pozadí */
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #1e2937;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 28rem;
+    margin: 0 1rem;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.modal-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1.75rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Prvky formuláře */
+.form-group {
+    width: 100%;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 1.1rem;
+    background-color: #2d3748;
+    border: 1px solid #4a5568;
+    border-radius: 16px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+#contact-form textarea {
+    margin-bottom: 1.75rem;
+    resize: vertical;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+    background-color: #334155;
+}
+
+/* Tlačítka uvnitř formuláře */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-cancel,
+.btn-submit {
+    flex: 1;
+    padding: 1.1rem;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn-cancel {
+    background-color: transparent;
+    color: #9ca3af;
+    border: 1px solid #4b5563;
+}
+
+.btn-cancel:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border-color: #9ca3af;
+}
+
+.btn-submit {
+    background-color: #ffffff;
+    color: #111827;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.btn-submit:hover {
+    background-color: #e5e7eb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15);
+}
+
+.btn-submit:disabled {
+    background-color: #4b5563;
+    color: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =============================================
+   RESPONSIVNÍ DESIGN & ADAPTIVITA
+   ============================================= */
+
+/* TELEFONY */
+@media (max-width: 767px) {
+    .contact-section {
+        padding-top: 140px;
+    }
+}
+
+/* TABLETY */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .contact-buttons {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    .contact-buttons .btn-primary,
+    .contact-buttons .btn-secondary {
+        width: auto;
+        min-width: 240px;
+    }
+}
+
+/* NOTEBOOKY & DESKTOPY */
+@media (min-width: 1024px) {
+    .contact-subtitle {
+        font-size: 1.5rem;
+    }
+}

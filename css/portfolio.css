@@ -1,0 +1,227 @@
+/* ==========================================================================
+   PORTFOLIO.CSS - STRÁNKA PROJEKTŮ (ČISTÝ REFAKTOR)
+   ========================================================================== */
+
+.portfolio-section {
+    padding: 140px 0 100px;
+    background: #e8dbc8;
+    min-height: 100vh;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.portfolio-subtitle {
+    font-size: 1.35rem;
+    color: #555555;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+/* Karta projektu */
+.portfolio-card {
+    display: grid;
+    gap: 50px;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 35px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+/* Obsah projektu */
+.project-content h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 18px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.project-content p {
+    font-size: 1.1rem;
+    color: #444444;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.project-content h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-content ul {
+    list-style: none;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.project-content ul li {
+    font-size: 1.05rem;
+    color: #444444;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.5;
+}
+
+.project-content ul li::before {
+    content: "✔";
+    color: #10b981;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Štítky technologií */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.project-tag {
+    background: #f1f1f1;
+    color: #333333;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+/* Obrázek projektu */
+.project-image-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-card:hover .project-image {
+    transform: scale(1.02);
+}
+
+/* Tlačítka pro odkaz na GitHub / live demo */
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #111111;
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+}
+
+.project-btn:hover {
+    background: #252525;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+/* ==========================================================================
+   RESPONSIVNÍ DESIGN & ADAPTIVITA
+   ========================================================================== */
+
+
+/* TELEFONY */
+@media (max-width: 767px) {
+    .portfolio-section {
+        padding-top: 110px;
+        padding-bottom: 60px;
+    }
+    
+    .section-header {
+        margin-bottom: 3.5rem;
+    }
+    
+    .portfolio-subtitle {
+        font-size: 1.15rem;
+    }
+
+    .projects-container {
+        gap: 60px;
+    }
+
+    .portfolio-card {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .project-content h3 {
+        font-size: 1.75rem;
+        margin-bottom: 12px;
+    }
+
+    .project-content p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .project-tags {
+        margin-bottom: 25px;
+    }
+
+    .project-btn {
+        width: 100%;
+    }
+}
+
+/* TABLETY */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .portfolio-card {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 30px;
+    }
+}
+
+/* NOTEBOOKY & DESKTOPY */
+@media (min-width: 1024px) {
+    .portfolio-card {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* Efekt střídání stran karet (Zebra layout) na desktopu */
+    .portfolio-card:nth-child(even) .project-image-container {
+        order: -1;
+    }
+}

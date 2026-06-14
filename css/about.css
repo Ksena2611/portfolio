@@ -1,0 +1,319 @@
+/* ==========================================================================
+   ABOUT.CSS - STRÁNKA O MNĚ (ČISTÝ REFAKTOR S RESPONZIVITOU)
+   ========================================================================== */
+
+.about-body {
+    background: #0f172a;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   HERO SEKCE
+   ========================================================================== */
+.hero {
+    padding-top: 110px;
+    padding-bottom: 100px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-grid {
+    display: grid;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+}
+
+/* Moderní gradientní text pro hlavní nadpisy */
+.gradient-text {
+    background: linear-gradient(90deg, #67e8f9, #c084fc, #e879f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.35rem;
+    color: #94a3b8;
+    margin-bottom: 2.8rem;
+    line-height: 1.5;
+}
+
+/* Flexibilní kontejner pro akční tlačítka */
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+/* Kompenzace globálních stylů pro tlačítka v hero sekci */
+.hero-buttons .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+/* Primární tlačítko */
+.hero-buttons .btn-primary {
+    background-color: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
+}
+
+.hero-buttons .btn-primary:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-2px);
+}
+
+/* Sekundární tlačítko */
+.hero-buttons .btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-buttons .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   OBRÁZEK S BADGEM
+   ========================================================================== */
+.image-wrapper {
+    position: relative;
+    max-width: 460px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.about-image {
+    width: 100%;
+    display: block;
+    border-radius: 28px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(103, 232, 249, 0.25);
+    transition: all 0.7s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.03);
+}
+
+/* Absolutně pozicovaný štítek přes obrázek */
+.image-badge {
+    position: absolute;
+    bottom: -25px;
+    right: -10px;
+    background: #1e2937;
+    border: 1px solid rgba(103, 232, 249, 0.4);
+    border-radius: 16px;
+    padding: 1.25rem 1.6rem;
+    text-align: center;
+    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.badge-small {
+    color: #67e8f9;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.badge-big {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+}
+
+/* ==========================================================================
+   ČASOVÁ OSA (TIMELINE)
+   ========================================================================== */
+.journey-section {
+    padding: 6rem 0;
+}
+
+.timeline {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    padding: 0 20px; /* Bezpečný vnitřní okraj pro mobilní zařízení */
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2.5rem;
+    position: relative;
+}
+
+.timeline-year {
+    width: 130px;
+    text-align: right;
+    color: #67e8f9;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    flex-shrink: 0;
+}
+
+.timeline-content h3 {
+    font-size: 1.55rem;
+    margin-bottom: 0.9rem;
+    color: #f1f5f9;
+}
+
+.timeline-content p {
+    color: #cbd5e1;
+    line-height: 1.65;
+    margin-bottom: 0.75rem;
+}
+
+.timeline-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   SEKCE VLASTNOSTÍ (FEATURES)
+   ========================================================================== */
+.features-section {
+    padding: 6rem 0;
+}
+
+.features-grid {
+    display: grid;
+    gap: 2rem;
+    padding: 0 20px;
+}
+
+.feature-card {
+    background: rgba(30, 41, 59, 0.65);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 24px;
+    padding: 2.8rem 2.2rem;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: #67e8f9;
+    box-shadow: 0 20px 30px -10px rgba(103, 232, 249, 0.15);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1.4rem;
+    color: #67e8f9;
+}
+
+/* ==========================================================================
+   CITÁT (QUOTE)
+   ========================================================================== */
+.quote-section {
+    padding: 6.5rem 0;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.6));
+}
+
+.quote-text {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    font-style: italic;
+    max-width: 760px;
+    margin: 0 auto 2rem;
+    color: #e2e8f0;
+}
+
+.quote-author {
+    color: #67e8f9;
+    font-weight: 600;
+    font-size: 1.15rem;
+    display: block;
+}
+
+/* ==========================================================================
+   RESPONSIVNÍ DESIGN & ADAPTIVITA
+   ========================================================================== */
+
+/* TELEFONY */
+@media (max-width: 767px) {
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 60px;
+        text-align: center;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+        padding: 0 20px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    /* Časová osa se na mobilu řadí svisle pod sebe */
+    .timeline-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .timeline-year {
+        text-align: left;
+        font-size: 1.2rem;
+        width: auto;
+    }
+}
+
+
+/* TABLETY */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero-grid {
+        grid-template-columns: 7fr 5fr;
+        gap: 5.5rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .timeline-item {
+        gap: 3rem;
+    }
+}
+
+/* NOTEBOOKY & DESKTOPY */
+@media (min-width: 1024px) {
+    .hero {
+        padding-top: 140px;
+    }
+    
+    .hero-grid {
+        gap: 7rem;
+    }
+    
+    .about-image {
+        border-radius: 32px;
+    }
+}
+
+
+
