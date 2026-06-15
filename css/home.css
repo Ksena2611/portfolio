@@ -100,7 +100,7 @@
 }
 
 /* ==========================================================================
-  RESPONSIVNÍ DESIGN & ADAPTIVITA
+   RESPONSIVNÍ DESIGN & ADAPTIVITA
    ========================================================================== */
 
 /* TELEFONY */
@@ -114,7 +114,7 @@
     }
     
     .hero-button-container {
-        bottom: 7.5rem;
+        bottom: 13.5rem;
     }
     
     .btn-hitech {
@@ -134,8 +134,7 @@
     }
 }
 
-/*TABLETY & DESKTOPI */
-
+/* TABLETY & DESKTOPY */
 @media (min-width: 768px) {
     .desktop-image { 
         display: block; 
